@@ -12,6 +12,7 @@ class LocationListEncoder(ModelEncoder):
     properties = [
         "name",
         "picture_url",
+        'id'
     ]
 
 
@@ -63,6 +64,11 @@ def api_list_states(request):
         }
         state_list.append(state_dict)
     return JsonResponse({'states': state_list})
+
+# @require_http_methods(['GET'])
+# def api_list_venues(request):
+#     venues = Location.objects.all()
+#     venue_list = []
 
 
 @require_http_methods(["GET", "POST"])
