@@ -7,13 +7,13 @@ function createCard(
     location
     ) {
     return `
-    <div class="col">
+    <div class="col-4">
       <div class="card shadow">
         <img src="${photoUrl}" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">${conferenceTitle}</h5>
-          <h6 class="card-subtitle pb-3">${location}</h6>
-          <p class="card-text">${conferenceDetails}</p>
+          <h5 class="card-title placeholder-glow">${conferenceTitle}</h5>
+          <h6 class="card-subtitle placeholder-glow pb-3">${location}</h6>
+          <p class="card-text placeholder-glow">${conferenceDetails}</p>
         </div>
         <div class='card-footer'>
             ${formatStart} - ${formatEnd}
@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(url)
         console.log(response)
         if (!response.ok) {
-            console.log(response.status)
             alert(response.statusText)
         } else {
             const data = await response.json()
@@ -79,7 +78,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
     } catch (error) {
-        // console.log(response.status)
         alert(response.statusText)
     }
 
