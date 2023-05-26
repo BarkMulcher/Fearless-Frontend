@@ -10,10 +10,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             for(let conference of data.conferences) {
                 const option = document.createElement('option');
-                option.value = conference.id;
+                option.value = conference.href
                 option.innerHTML = conference.name;
                 selectTag.appendChild(option);
-                const conferenceId1 = conference.id
         }
 
             const formTag = document.getElementById('create-presentation-form');
@@ -21,14 +20,16 @@ window.addEventListener('DOMContentLoaded', async () => {
                 event.preventDefault();
 
                 const formData = new FormData(formTag);
+                const conferenceHref = data['conference']
                 const json = JSON.stringify(Object.fromEntries(formData));
+
 
                 // Get information about selected option
                 // const conferenceID = conferenceId1
 
 
                 // Send data to server
-                const presentationUrl = `http://localhost:8000/api/conferences/${conferenceId1}/presentations/`;
+                const presentationUrl = `http://localhost:8000/api/conferences/${conferenceHref}/presentations/`;
                 const fetchConfig = {
                     method: "POST",
                     body: json,

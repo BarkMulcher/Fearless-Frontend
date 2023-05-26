@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Conference :: Conference GO!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script type="module" src="js/new-conference.js"></script>
-</head>
+
+export default function NewConference() {
+    return (
+<>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,14 +27,14 @@
               </ul>
               <form class="d-flex">
                 <a class="btn btn-primary me-2" href="attend-conference.html">Attend!</a>
-                <input class="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search"></input>
                 <button class="btn btn-outline-success" type="submit">Search</button>
 
               </form>
             </div>
           </div>
         </nav>
-      </header>
+    </header>
       <main>
         <div class="container">
           <div class="row">
@@ -49,25 +43,25 @@
                 <h1>Create a new conference</h1>
                 <form id="create-conference-form">
                   <div class="form-floating mb-3">
-                    <input placeholder="Name" required type="text" id="name" name='name' class="form-control">
+                    <input placeholder="Name" required type="text" id="name" name='name' class="form-control"></input>
                     <label for="name">Name</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input placeholder="Start Date" required type="date" name='starts' id="starts" class="form-control">
+                    <input placeholder="Start Date" required type="date" name='starts' id="starts" class="form-control"></input>
                     <label for="starts">Start Date</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input placeholder="End Date" required type="date" name='ends' id="ends" class="form-control">
+                    <input placeholder="End Date" required type="date" name='ends' id="ends" class="form-control"></input>
                     <label for="ends">End Date</label>
                   </div>
                   <div class="mb-3">
                     <textarea placeholder='Description'  required id="description" class="form-control" name='description'></textarea>
                   </div>
                   <div class="form-floating mb-3">
-                    <input placeholder='Maximum Presentations' required id="max_presentations" class="form-control" name='max_presentations'>
+                    <input placeholder='Maximum Presentations' required id="max_presentations" class="form-control" name='max_presentations'></input>
                   </div>
                   <div class="form-floating mb-3">
-                    <input placeholder='Maximum Attendees' required id="max_attendees" class="form-control" name='max_attendees'>
+                    <input placeholder='Maximum Attendees' required id="max_attendees" class="form-control" name='max_attendees'></input>
                   </div>
                   <div class="mb-3">
                     <select required id="location" class="form-select" name='location'>
@@ -86,4 +80,6 @@
         crossorigin="anonymous">
       </script>
 </body>
-</html>
+</>
+)
+}

@@ -46,11 +46,10 @@ window.addEventListener('DOMContentLoaded', async () => {
           selectTag.classList.remove('d-none')
 
         } else {
-            throw new Error('you fucked up!')
+            throw new Error('wrong!')
         }
     } catch (e) {
         console.error(e)
     }
 
-
-  });
+});
