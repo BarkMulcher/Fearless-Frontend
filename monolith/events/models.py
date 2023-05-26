@@ -82,4 +82,4 @@ class Conference(models.Model):
         return self.name
 
     class Meta:
-        ordering = ("starts", "name")  # Default ordering for Conference
+        ordering = ("id", "name")  # Default ordering for Conference

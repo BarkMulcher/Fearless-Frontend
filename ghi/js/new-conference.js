@@ -1,11 +1,12 @@
 window.addEventListener('DOMContentLoaded', async () => {
+
     const fetchUrl = 'http://localhost:8000/api/locations/'
     try {
         const response = await fetch(fetchUrl)
+
         if (response.ok) {
             const data = await response.json()
             const selectTag = document.getElementById('location')
-            console.log(data)
             for (let i  of data.locations) {
                 let option = document.createElement('option')
                 option.value = i.id
@@ -16,7 +17,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             const formTag = document.getElementById('create-conference-form');
             formTag.addEventListener('submit', async event => {
                 event.preventDefault()
-                
+
                 const formData = new FormData(formTag)
                 const json = JSON.stringify(Object.fromEntries(formData))
 
@@ -44,5 +45,4 @@ window.addEventListener('DOMContentLoaded', async () => {
         console.error(e)
         // 'error:',
     }
-    }
-)
+})
