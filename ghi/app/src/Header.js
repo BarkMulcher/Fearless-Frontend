@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+// import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
@@ -19,6 +19,9 @@ export default function Header() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0">
+            <Link className="nav-link" to="/attendeelist">
+                Attendee list
+              </Link>
               <Link className="nav-link" to="/">
                 Home
               </Link>
@@ -34,6 +37,12 @@ export default function Header() {
               <Link className="nav-link" to="/newpresentation">
                 New Presentation
               </Link>
+              <form class="d-flex">
+              <a class="btn btn-primary me-2" href="attend-conference.html">Attend!</a>
+              <input class="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search"></input>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+
+              </form>
 
               {/* <NavDropdown
                 variant="outline-success dark"

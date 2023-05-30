@@ -11,7 +11,7 @@ export default function NewConference() {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {/* <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
@@ -24,7 +24,7 @@ export default function NewConference() {
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="new-presentation.html">New presentation</a>
                 </li>
-              </ul>
+              </ul> */}
               <form class="d-flex">
                 <a class="btn btn-primary me-2" href="attend-conference.html">Attend!</a>
                 <input class="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search"></input>
@@ -77,7 +77,7 @@ export default function NewConference() {
       </main>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous">
+        crossOrigin="anonymous">
       </script>
 </body>
 </>

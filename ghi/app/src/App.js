@@ -7,7 +7,7 @@ import NewConference from './NewConference';
 import NewLocation from './NewLocation'
 import NewPresentation from './NewPresentation'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import AttendeeList from './AttendeeList'
 
 function App(props) {
   if (props.attendees === undefined) {
@@ -23,11 +23,15 @@ function App(props) {
         </header>
         <div>
           <Routes>
-          <Route
+            <Route
+              path="/attendeelist"
+              element={<AttendeeList />}
+            />
+            <Route
               path="/login"
               element={<Login />}
             />
-          <Route
+            <Route
               path="/newpresentation"
               element={<NewPresentation />}
             />
@@ -43,33 +47,17 @@ function App(props) {
               path="/newpresentation"
               element={<NewPresentation />}
             />
-            </Routes>
+          </Routes>
         </div>
       </Router>
 
 
 
       <div className="container">
-        <table className='table table-striped'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Conference</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.attendees.map(attendee => {
-              return (
-                <tr key={attendee.href}>
-                  <td>{attendee.name}</td>
-                  <td>{attendee.conference}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-
+        <NewLocation />
+        {/* <AttendeeList attendees={props.attendees} /> */}
       </div>
+
       <Footer />
     </React.Fragment>
   );
