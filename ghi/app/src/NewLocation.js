@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react"
 
 
 
-export default function NewLocation(props) {
+export default function NewLocation() {
+
+  const [states, setStates] = useState([])
 
   const [name, setName] = useState('')
   function nameChanged(event) {
@@ -19,10 +21,41 @@ export default function NewLocation(props) {
     setCity(event.target.value)
   }
 
-  const [states, setStates] = useState([])
+  const [state, setState] = useState('')
   function stateChange(event) {
-    setStates(event.target.value)
+    setState(event.target.value)
   }
+
+async function submitBtnHandler(event) {
+  event.preventDefault()
+  // create empty JSON data
+  const data = {}
+
+  data.room_count = roomCount;
+  data.name = name;
+  data.city = city;
+  data.state = state;
+  console.log(data);
+
+  const locationUrl = 'http://localhost:8000/api/locations/';
+  const fetchConfig = {
+    method: "post",
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const response = await fetch(locationUrl, fetchConfig);
+  if (response.ok) {
+    const newLocation = await response.json();
+    console.log(newLocation);
+    setName('');
+    setRoomCount('');
+    setCity('');
+    setState('');
+  }
+}
 
   const fetchData = async () => {
     const url = 'http://localhost:8000/api/states'
@@ -65,7 +98,7 @@ export default function NewLocation(props) {
         <div className="offset-3 col-6">
           <div className="shadow p-4 mt-4">
             <h1>Create a new location</h1>
-            <form id="create-location-form">
+            <form onSubmit={submitBtnHandler} id="create-location-form">
               <div className="form-floating mb-3">
                 <input placeholder="Name" required type="text" id="name" name='name' value={name} onChange={nameChanged} className="form-control"></input>
                 <label htmlFor="name">Name</label>
@@ -79,11 +112,12 @@ export default function NewLocation(props) {
                 <label htmlFor="city">City</label>
               </div>
               <div className="mb-3">
-                <select required id="state" value={states} onChange={stateChange} className="form-select" name='state'>
-                  <option value="">Choose a state</option>
+                <select required id="state" value={state} onChange={stateChange} className="form-select" name='state'>
+
+                  <option>Choose a state</option>
                   {states.map(state => {
                     return (
-                      <option value={state.abbreviation} key={states.abbreviation}>
+                      <option value={state.abbreviation} key={state.abbreviation}>
                         {state.name}
                       </option>
                     )

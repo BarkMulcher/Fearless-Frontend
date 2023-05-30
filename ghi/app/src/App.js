@@ -54,7 +54,7 @@ function App(props) {
 
 
       <div className="container">
-        <NewLocation />
+        {/* <NewLocation /> */}
         {/* <AttendeeList attendees={props.attendees} /> */}
       </div>
 
