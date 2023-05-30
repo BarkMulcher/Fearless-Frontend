@@ -6,21 +6,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
-    return (
-        <>
+  return (
+    <>
       <Navbar collapseOnSelect expand="lg" variant="dark" id="header" bg="dark">
         <Container fluid>
           <Navbar.Brand id="heading" href="/">
             Conference GO
           </Navbar.Brand>
           <span id="phrase" className="navbar-text text-info italic">
-           go to conferences or whatever
+            go to conferences or whatever
           </span>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0">
-            <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/">
                 Home
+              </Link>
+              <Link className="nav-link" to="/login">
+                Login
               </Link>
               <Link className="nav-link" to="/newconference">
                 New Conference
@@ -28,7 +31,7 @@ export default function Header() {
               <Link className="nav-link" to="/newlocation">
                 New Location
               </Link>
-              <Link className="nav-link" to="/contact">
+              <Link className="nav-link" to="/newpresentation">
                 New Presentation
               </Link>
 
@@ -44,6 +47,6 @@ export default function Header() {
         </Container>
       </Navbar>
     </>
-    );
-  }
+  );
+}
 

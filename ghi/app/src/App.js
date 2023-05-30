@@ -1,11 +1,13 @@
 import React from 'react'
 import './App.css';
+import Login from './Login'
 import Header from './Header'
 import Footer from './Footer'
 import NewConference from './NewConference';
 import NewLocation from './NewLocation'
 import NewPresentation from './NewPresentation'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App(props) {
   if (props.attendees === undefined) {
@@ -21,6 +23,10 @@ function App(props) {
         </header>
         <div>
           <Routes>
+          <Route
+              path="/login"
+              element={<Login />}
+            />
           <Route
               path="/newpresentation"
               element={<NewPresentation />}
