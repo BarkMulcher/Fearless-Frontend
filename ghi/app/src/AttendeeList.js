@@ -1,3 +1,4 @@
+import React from 'react'
 
 function AttendeeList(props) {
 
@@ -14,8 +15,8 @@ function AttendeeList(props) {
                     {props.attendees.map(attendee => {
                         return (
                             <tr key={attendee.href}>
-                                <td>{attendee.name}</td>
-                                <td>{attendee.conference}</td>
+                                <td>{ attendee.name }</td>
+                                <td>{ attendee.conference }</td>
                             </tr>
                         )
                     })}

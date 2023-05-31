@@ -92,8 +92,7 @@ export default function NewConference() {
   return (
 
 <>
-<body>
-    <header>
+    {/* <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">Conference GO!</a>
@@ -109,7 +108,7 @@ export default function NewConference() {
             </div>
           </div>
         </nav>
-    </header>
+    </header> */}
       <main>
         <div className="container">
           <div className="row">
@@ -162,7 +161,7 @@ export default function NewConference() {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossOrigin="anonymous">
       </script>
-</body>
+
 </>
 )
 }

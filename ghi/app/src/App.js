@@ -8,6 +8,8 @@ import NewLocation from './NewLocation'
 import NewPresentation from './NewPresentation'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import AttendeeList from './AttendeeList'
+import AttendConferenceForm from './AttendConferenceForm'
+import MainPage from './MainPage';
 
 function App(props) {
   if (props.attendees === undefined) {
@@ -21,31 +23,35 @@ function App(props) {
             <Header />
           </nav>
         </header>
-        <div>
+        <div className='container'>
           <Routes>
             <Route
-              path="/attendeelist"
-              element={<AttendeeList />}
+              index
+              element={<MainPage />}
             />
             <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/newpresentation"
-              element={<NewPresentation />}
-            />
-            <Route
-              path="/newconference"
+              path="conferences/new"
               element={<NewConference />}
             />
             <Route
-              path="/newlocation"
+              path="attendees/new"
+              element={<AttendConferenceForm />}
+            />
+            <Route
+              path="locations/new"
               element={<NewLocation />}
             />
             <Route
-              path="/newpresentation"
+              path="attendees"
+              element={<AttendeeList attendees={props.attendees} />}
+            />
+            <Route
+              path="/presentations/new"
               element={<NewPresentation />}
+            />
+            <Route
+              path='login'
+              element={<Login />}
             />
           </Routes>
         </div>
@@ -54,7 +60,7 @@ function App(props) {
 
 
       <div className="container">
-        <NewConference />
+        {/* <NewConference /> */}
         {/* <NewLocation /> */}
         {/* <AttendeeList attendees={props.attendees} /> */}
       </div>
