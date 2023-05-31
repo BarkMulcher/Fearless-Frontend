@@ -7,15 +7,15 @@ function createCard(
     location
     ) {
     return `
-    <div class="col-4">
-      <div class="card shadow">
-        <img src="${photoUrl}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title placeholder-glow">${conferenceTitle}</h5>
-          <h6 class="card-subtitle placeholder-glow pb-3">${location}</h6>
-          <p class="card-text placeholder-glow">${conferenceDetails}</p>
+    <div className="col-4">
+      <div className="card shadow">
+        <img src="${photoUrl}" className="card-img-top">
+        <div className="card-body">
+          <h5 className="card-title placeholder-glow">${conferenceTitle}</h5>
+          <h6 className="card-subtitle placeholder-glow pb-3">${location}</h6>
+          <p className="card-text placeholder-glow">${conferenceDetails}</p>
         </div>
-        <div class='card-footer'>
+        <div className='card-footer'>
             ${formatStart} - ${formatEnd}
         </div>
       </div>

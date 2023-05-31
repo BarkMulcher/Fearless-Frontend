@@ -37,10 +37,10 @@ export default function Header() {
               <Link className="nav-link" to="/newpresentation">
                 New Presentation
               </Link>
-              <form class="d-flex">
-              <a class="btn btn-primary me-2" href="attend-conference.html">Attend!</a>
-              <input class="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search"></input>
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <form className="d-flex">
+              <a className="btn btn-primary me-2" href="attend-conference.html">Attend!</a>
+              <input className="form-control me-2" type="search" placeholder="Search conferences" aria-label="Search"></input>
+              <button className="btn btn-outline-success" type="submit">Search</button>
 
               </form>
 

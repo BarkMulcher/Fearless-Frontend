@@ -54,6 +54,7 @@ function App(props) {
 
 
       <div className="container">
+        <NewConference />
         {/* <NewLocation /> */}
         {/* <AttendeeList attendees={props.attendees} /> */}
       </div>
